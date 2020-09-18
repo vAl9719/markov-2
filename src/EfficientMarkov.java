@@ -7,7 +7,7 @@ public class EfficientMarkov extends BaseMarkov {
 		this(3);
 	}
 
-	EfficientMarkov(int order) {
+	public EfficientMarkov(int order) {
 		super(order);
 		myMap = new HashMap<>();
 	}
