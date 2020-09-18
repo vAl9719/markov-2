@@ -9,7 +9,7 @@ import java.util.*;
  * This class is designed to be extended with state
  * protected rather than private
  * 
- * @author Alyssa Zhao
+ * @author ola
  *
  */
 
