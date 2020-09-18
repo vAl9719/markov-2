@@ -19,7 +19,7 @@ public class EfficientMarkov extends BaseMarkov {
 		myMap.clear();
 		String model;
 		String next;
-		for(int i = 0; i< myText.length(); i++){
+		for(int i = 0; i< myText.length()-myOrder; i++){
 			int plus = i+myOrder;
 			model = myText.substring(i, plus);
 			if(!myMap.containsKey(model)){
