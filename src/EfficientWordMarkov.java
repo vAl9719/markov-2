@@ -6,13 +6,12 @@ public class EfficientWordMarkov extends BaseWordMarkov{
     private Map<WordGram, ArrayList<String>> myMap;
 
     public EfficientWordMarkov(){
-        this(3);
+        this(2);
 
     }
 
     public EfficientWordMarkov(int order) {
         super(order);
-        myOrder = order;
         myMap = new HashMap<>();
     }
 
@@ -21,13 +20,13 @@ public class EfficientWordMarkov extends BaseWordMarkov{
         myWords = text.split("\\s+");
         myMap.clear();
         String next;
-        for(int i = 0; i<myWords.length-myOrder+1; i++){
+        for(int i = 0; i+myOrder<myWords.length+1; i++){
             int plus = i+myOrder;
             WordGram model = new WordGram(myWords, i, myOrder);
             if(!myMap.containsKey(model)){
                 myMap.put(model, new ArrayList<String>());
             }
-            else if(myWords.length == plus){
+            if(myWords.length == plus){
                 myMap.get(model).add(PSEUDO_EOS);
             }
             else{
